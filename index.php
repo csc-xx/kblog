@@ -26,7 +26,7 @@ $version = $variables->version();
 //begin html output
 echo "<html>";
 echo "<head>"; //nice and neat...not
-echo '<title>' . $pageTitle . ' ' . $version . ""; 
+echo '<title>' . $pageTitle . ' - ' . $version . ""; //FIXME : doesnt display
 echo "</title>";if (!$_COOKIE['kbg_template']) { 
 	echo '<link rel="stylesheet" href="default.css">'; 
 } else { 

@@ -26,15 +26,10 @@ echo "<html>";
 echo "<head>"; //nice and neat...not
 echo '<title>' . $variables->pageTitle() . ' ' . $variables->version() . ""; 
 echo "</title>";
-if ( $_COOKIE['template'] == 'mid' ) { 
-	echo '<link rel="stylesheet" href="midnight.css">'; 
-} else { 
-	echo '<link rel="stylesheet" href="default.css">'; 
-}
-if ( $_COOKIE['template'] == 'def' ) { 
+if (!$_COOKIE['kbg_template']) { 
 	echo '<link rel="stylesheet" href="default.css">'; 
 } else { 
-	echo '<link rel="stylesheet" href="default.css">';
+	echo '<link rel="stylesheet" href="'.$_COOKIE['kbg_template'] .'">';
 }
 echo "</head>";
 echo "<body>";

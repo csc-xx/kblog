@@ -36,8 +36,7 @@ if ( $template == 1 ) {
 }
 if ( $template == 2 ) {
 	setcookie('kbg_template','midnight.css', time()+60*60*24*30); //same only with midnight.css
-	echo $refcheck[$refcheck3];
-	echo '<meta http-equiv="refresh" content="20;URL='.$referrer.'">'; 
+	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; 
 }
 if ( $action == 1 ) { //TODO : write a function to parse user data then store it in session variables.
 	//setcookie('auth', true, time()+3600); //LOL

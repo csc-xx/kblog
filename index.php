@@ -23,7 +23,7 @@ include("sysvars.php");
 $variables = new sVarPipe();
 //begin html output
 echo "<html>";
-echo "<head>"; //nice and neat ;)
+echo "<head>"; //nice and neat...not
 echo '<title>' . $variables->pageTitle() . ' ' . $variables->version() . ""; 
 echo "</title>";
 if ( $_COOKIE['template'] == 'mid' ) { 
@@ -72,16 +72,18 @@ if ( $_COOKIE['kbg_auth'] == true ) {
 $masterRecord = fopen('master', 'rb');
 $masterData = explode("\n", $masterRecord);
 $masterData[0] = $masterRecord['total'];
-if(!$masterRecord['total'] = '0') { 
+if(!$masterRecord['total'] < '1') { 
 	$firstPost = $masterRecord['total'] - 1;
 	$postCount = $firstPost;
 	$breakCount = $postcount - $variables->postDisplayNo(); //the stopping point is total posts - 1 - postDisplayNo()
 	$postNumber = $firstPost;
 	while(!$postNumber == $breakCount) {
-		$post = file_get_contents('blogs/' . $postNumber);
+		$post = readfile('blogs/' . $postNumber);
 		echo $post;
 		$postNumber = $postNumber - 1; 
 	}
+} else {
+	echo "<blockquote> NO POSTS </blockquote>";
 }
 echo "</body>";
 echo "</html>";

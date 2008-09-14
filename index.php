@@ -21,12 +21,13 @@
 //Include and initialize variable class
 include("sysvars.php");
 $variables = new sVarPipe();
+$pageTitle = $variables->pageTitle();
+$version = $variables->version();
 //begin html output
 echo "<html>";
 echo "<head>"; //nice and neat...not
-echo '<title>' . $variables->pageTitle() . ' ' . $variables->version() . ""; 
-echo "</title>";
-if (!$_COOKIE['kbg_template']) { 
+echo '<title>' . $pageTitle . ' ' . $version . ""; 
+echo "</title>";if (!$_COOKIE['kbg_template']) { 
 	echo '<link rel="stylesheet" href="default.css">'; 
 } else { 
 	echo '<link rel="stylesheet" href="'.$_COOKIE['kbg_template'] .'">';
@@ -78,7 +79,7 @@ if(!$masterRecord['total'] < '1') {
 		$postNumber = $postNumber - 1; 
 	}
 } else {
-	echo "<blockquote> NO POSTS </blockquote>";
+	echo "<blockquote> <center> NO POSTS <center> </blockquote>";
 }
 echo "</body>";
 echo "</html>";

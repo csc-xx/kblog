@@ -1,0 +1,14 @@
+/* CSS Document */
+body{background-color:#000000;font-family:Arial, Verdana, Helvetica, sans-serif;font-size:12px;color:#ffffff;font-weight:normal;border:0px solid #cccccc;scrollbar-base-color:#444444;scrollbar-arrow-color:#efefef;}
+blockquote{font-family:'Comic Sans MS', Verdana, Helvetica, sans-serif;font-size:10px;color:#ffffff;font-weight:normal;background:#444444;border:1px solid;}
+div{font-family:Arial, Verdana, Helvetica, sans-serif;font-size:11px;color:#ffffff;font-weight:normal;background:#cccccc;padding:1px;}
+p{font-family:Arial, Verdana, Helvetica, sans-serif;font-size:;font-weight:normal;}
+span{font-family:Arial, Verdana, Helvetica, sans-serif;font-size:8px;font-weight:normal;}
+td{font-weight:normal;}
+ol{font-weight:normal;}
+ul{font-weight:normal;}
+input{font-family:Arial, Verdana, Helvetica, sans-serif;font-size:10px;color:#ffffff;font-weight:normal;background:#000000;border:1px solid #efefef;}
+select{font-family:Arial, Verdana, Helvetica, sans-serif;font-size:10px;color:#ffffff;font-weight:normal;background:#000000;}
+textarea{font-family:Arial, Verdana, Helvetica, sans-serif;font-size:10px;color:#ffffff;font-weight:normal;background:#000000;border:1px solid #efefef;scrollbar-base-color:#444444;scrollbar-arrow-color:#cccccc;}
+a:active,a:link,a:visited{font-family:Verdana, Helvetica, Arial, sans-serif;font-size:11px;color:#00ffff;font-weight:normal;text-decoration:none;}
+a:hover{font-family:Verdana, Helvetica, Arial, sans-serif;font-size:11px;color:#0000ff;font-weight:normal;text-decoration:none;}

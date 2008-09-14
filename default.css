@@ -1,0 +1,14 @@
+/* CSS Document */
+body{font-weight:normal;}
+blockquote{font-weight:normal;background:#cccccc;}
+div{font-weight:normal;}
+p{font-size:;font-weight:normal;}
+span{font-size:9px;font-weight:normal;text-align:center;}
+td{font-weight:normal;}
+ol{font-weight:normal;}
+ul{font-weight:normal;}
+input{font-weight:normal;border:1px solid #000000;}
+select{font-weight:normal;}
+textarea{font-weight:normal;border:1px solid #000000;}
+a:active,a:link,a:visited{font-weight:normal;text-decoration:none;}
+a:hover{font-weight:normal;text-decoration:none;}

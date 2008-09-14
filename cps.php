@@ -27,20 +27,28 @@ $action = $_GET['action'];
 $ip = $_SERVER['REMOTE_ADDR'];
 $referrer = $_SERVER['HTTP_REFERER'];
 $version = '1.0.2 build 1006';
+$refcheck = split('/', $referrer);
+$refcheck2 = count($refcheck2);
+$refcheck3 = $refcheck - 1;
 if ( $template == 1 ) { 
-	//Old: default.php    Purpose: Set cookie for default template
-	setcookie('kbg_template','default.css', time()+60*60*24*30);
-	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+	setcookie('kbg_template','default.css', time()+60*60*24*30); //Sets a template cookie for default.css with a time i forgot
+	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; //Uses a metarefresh to redirect to (supposed to be) control.php
 }
 if ( $template == 2 ) {
-	//Old: midnight.php    Purpose: Set cookie for midnight template
-	setcookie('kbg_template','midnight.css', time()+60*60*24*30); 
-	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+	setcookie('kbg_template','midnight.css', time()+60*60*24*30); //same only with midnight.css
+	echo $refcheck[$refcheck3];
+	echo '<meta http-equiv="refresh" content="20;URL='.$referrer.'">'; 
 }
-if ( $action == 1 ) { 
-	//Old: setauth.php    Purpose: Sets authintication cookie
-	setcookie('auth', true, time()+3600);
-	echo '<meta http-equiv="refresh" content="0;URL=blog.php">';
+if ( $action == 1 ) { //TODO : write a function to parse user data then store it in session variables.
+	//setcookie('auth', true, time()+3600); //LOL
+	if(!$refcheck[$refcheck3]; == 'login.php') {
+		echo '<font color="00ff00"> FAIL </font>';
+		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999>';
+	} else {
+		session_start();
+		$_SESSION['auth'] = true;
+	}
+	echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 }
 if ( $action == 2 ) { 
 	//Old: logout.php   Purpose: Resets the cookies nessisary for a successful login.

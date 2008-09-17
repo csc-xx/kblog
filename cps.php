@@ -29,7 +29,7 @@ $referrer = $_SERVER['HTTP_REFERER'];
 $version = '1.0.2 build 1006';
 $refcheck = split('/', $referrer);
 $refcheck2 = count($refcheck2);
-$refcheck3 = $refcheck - 1;
+$refcheck3 = $refcheck--;
 if ( $template == 1 ) { 
 	setcookie('kbg_template','default.css', time()+60*60*24*30); //Sets a template cookie for default.css with a time i forgot
 	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; //Uses a metarefresh to redirect to (supposed to be) control.php
@@ -40,7 +40,7 @@ if ( $template == 2 ) {
 }
 if ( $action == 1 ) { //TODO : write a function to parse user data then store it in session variables.
 	//setcookie('auth', true, time()+3600); //LOL
-	if(!$refcheck[$refcheck3]; == 'login.php') {
+	if(!$refcheck[$refcheck3] == 'login.php') {
 		echo '<font color="00ff00"> FAIL </font>';
 		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999>';
 	} else {

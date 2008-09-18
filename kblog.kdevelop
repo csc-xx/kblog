@@ -76,6 +76,21 @@
       <codeHinting>true</codeHinting>
       <realtimeParsing>true</realtimeParsing>
     </codeHelp>
+    <general>
+      <invocationMode>2</invocationMode>
+    </general>
+    <webInvocation>
+      <weburl>http://localhost/</weburl>
+    </webInvocation>
+    <shell>
+      <phpexe>/usr/local/bin/php</phpexe>
+      <phpini/>
+    </shell>
+    <options>
+      <phpincludepath/>
+      <defaultFile/>
+      <startupFileMode>1</startupFileMode>
+    </options>
   </kdevphpsupport>
   <kdevfilecreate>
     <useglobaltypes>

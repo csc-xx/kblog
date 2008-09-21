@@ -53,6 +53,8 @@ echo '[<a href="index.php">Home</a>]';
 	echo '<p>';
 	echo 'Force Database Reset. [<a href="cps.php?action=3">RESET</a>]';
 	echo '<br>Query Processing Script Version. [<a href="cps.php?action=5">QUERY</a>]';
+//} else {
+//	echo '<meta http-equiv="refresh" content="0;URL=cps.php?id=999&action=authcheck2">';
 //}
 /*if ( $_COOKIE['kbg_auth'] == false ) {
 	echo '<meta http-equiv="refresh" content="0;URL=cps.php?id=999">';

@@ -22,19 +22,22 @@ class sVarPipe {
 	private $pageTitle = "kBlog";
 	private $version = "2.0a";
 	private $postDisplayNo = "6";
-	function __construct() {
+	public function __construct() {
 		$this->pipeOpen = true;
 		$this->pageTitle = (string)$pageTitle;
 		$this->version = (string)$version;
 		$this->postDisplayNo = (string)$postDisplayNo;
 	}
-	function pageTitle() {
+	public function pageTitle() {
 		return $this->pageTitle;
 	}
-	function version() {
+	public function version() {
 		return $this->version;
 	}
-	function postDisplayNo() {
+	public function postDisplayNo() {
 		return $this->postDisplayNo;
+	}
+	public function __deconstruct() {
+		$this->pipeOpen = false;
 	}
 }

@@ -22,11 +22,17 @@ class sVarPipe {
 	private $pageTitle = "kBlog";
 	private $version = "2.0a";
 	private $postDisplayNo = "6";
-	public function __construct() {
+	protected $userDataDirectory = "data/users";
+	public function __construct($action) {
 		$this->pipeOpen = true;
 		$this->pageTitle = (string)$pageTitle;
 		$this->version = (string)$version;
 		$this->postDisplayNo = (string)$postDisplayNo;
+		if ($action == "EXPLOSION") {
+			$this->armC4();
+		} else {
+			$this->dataExplosion = false;
+		}
 	}
 	public function pageTitle() {
 		return $this->pageTitle;
@@ -40,4 +46,9 @@ class sVarPipe {
 	public function __deconstruct() {
 		$this->pipeOpen = false;
 	}
+	public function armC4() {
+		$this->user = $_COOKIE['kbg_user'];
+		$this->userFile = ''. $userDataDirectory . '' . $this->user . "";
+		$this->dataPipe = fopen($this->userFile, 'ab');
+		
 }

@@ -50,5 +50,12 @@ class sVarPipe {
 		$this->user = $_COOKIE['kbg_user'];
 		$this->userFile = ''. $userDataDirectory . '' . $this->user . "";
 		$this->dataPipe = fopen($this->userFile, 'ab');
-		
+	}
+	public function launchC4($action) {
+		if($action == "ALL") {
+			return $plastiqueDetonated = true;
+		} else {
+		}
+		explode("\n", $this->dataPipe;
+	}				
 }

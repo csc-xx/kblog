@@ -56,6 +56,6 @@ class sVarPipe {
 			return $plastiqueDetonated = true;
 		} else {
 		}
-		explode("\n", $this->dataPipe;
+		explode("\n", $this->dataPipe);
 	}				
 }

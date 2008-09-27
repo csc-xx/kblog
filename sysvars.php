@@ -19,11 +19,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 class sVarPipe {
-	private $pageTitle = "kBlog";
-	private $version = "2.0a";
-	private $postDisplayNo = "6";
+	public $pageTitle = "kBlog";
+	public $version = 2.0;
+	public $postDisplayNo = 6;
 	protected $userDataDirectory = "data/users";
-	public function __construct($action) {
+	public function __construct($action=false) {
 		$this->pipeOpen = true;
 		$this->pageTitle = (string)$pageTitle;
 		$this->version = (string)$version;

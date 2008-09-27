@@ -95,9 +95,11 @@ if ( $action == 6 ) {
 	setcookie('kbg_debug',true ,time()+60*60*24*30);
 	$_COOKIE['kbg_debug'] = true; //Will be for the dandy debug mode :D
 	echo "<!--- Hidden messages are the shit. Debug mode enabled --->";
+	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
 }
 if ( $action == 7 ) {
 	setcookie('kbg_debug', false);
+	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
 }
 if ( $id == '999' ) {
 	//This is the experimental security logger.

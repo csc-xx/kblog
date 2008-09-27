@@ -21,8 +21,8 @@
 //Include and initialize variable class
 include("sysvars.php");
 $variables = new sVarPipe();
-$pageTitle = $variables->pageTitle();
-$version = $variables->version();
+$pageTitle = $variables->pageTitle;
+$version = $variables->version;
 //begin html output
 echo "<html>";
 echo "<head>"; //nice and neat...not
@@ -82,6 +82,18 @@ if(!$masterRecord['total'] < '1') {
 } else {
 	echo "<blockquote> <center> NO POSTS <center> </blockquote>";
 }
+if ($_COOKIE['kbg_debug'] == true) {
+	echo "<hr>";
+	echo "Prettyful debug information mode enabled.";
+	echo "<hr>Template: ";
+	var_dump($_COOKIE['kbg_template']);
+	echo "<p>Current Rank: ";
+	var_dump($_COOKIE['kbg_rank']);
+	echo "</p><p>Page Title: ";
+	var_dump($pageTitle);
+	echo "</p><p>Version: ";
+	var_dump($version);
+} //TODO : Add special administrative debug
 echo "</body>";
 echo "</html>";
 ?>

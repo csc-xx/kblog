@@ -31,8 +31,8 @@ $refcheck = split('/', $referrer);
 $refcheck2 = count($refcheck2);
 $refcheck3 = $refcheck--;
 //Start up the variable class 
-$userData = new sVarPipe("EXPLOSION");
-$userData->launchC4("ALL");
+//$userData = new sVarPipe("EXPLOSION");
+//$userData->launchC4("ALL");
 if ( $template == 1 ) { 
 	setcookie('kbg_template','default.css', time()+60*60*24*30); //Sets a template cookie for default.css with a time i forgot
 	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; //Uses a metarefresh to redirect to (supposed to be) control.php
@@ -49,7 +49,7 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 	} else {
 		session_start();
 		$_SESSION['kbg_auth'] = true;
-		explode
+		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
 	}
 	echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 }
@@ -90,6 +90,14 @@ if ( $action == 5 ) {
 	echo 'CPS Script version reads ' . $version;
 	echo '<br>Redirecting in 5.';
 	echo '<meta http-equiv="refresh" content="5;URL=control.php">';
+}
+if ( $action == 6 ) {
+	setcookie('kbg_debug',true ,time()+60*60*24*30);
+	$_COOKIE['kbg_debug'] = true; //Will be for the dandy debug mode :D
+	echo "<!--- Hidden messages are the shit. Debug mode enabled --->";
+}
+if ( $action == 7 ) {
+	setcookie('kbg_debug', false);
 }
 if ( $id == '999' ) {
 	//This is the experimental security logger.

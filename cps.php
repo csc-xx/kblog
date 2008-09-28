@@ -34,11 +34,11 @@ $refcheck3 = $refcheck--;
 //$userData = new sVarPipe("EXPLOSION");
 //$userData->launchC4("ALL");
 if ( $template == 1 ) { 
-	setcookie('kbg_template','default.css', time()+60*60*24*30); //Sets a template cookie for default.css with a time i forgot
+	setcookie('kbg_template','default.css', time()+60*60*24*365); //Sets a template cookie for default.css with a time i forgot
 	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; //Uses a metarefresh to redirect to (supposed to be) control.php
 }
 if ( $template == 2 ) {
-	setcookie('kbg_template','midnight.css', time()+60*60*24*30); //same only with midnight.css
+	setcookie('kbg_template','midnight.css', time()+60*60*24*365); //same only with midnight.css
 	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; 
 }
 if ( $action == 1 ) { //TODO : write a function to parse user data then store it in session variables.

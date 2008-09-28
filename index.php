@@ -42,7 +42,7 @@ echo "</h2>";
 if ( $_COOKIE['kbg_auth'] == true ) {
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
-if ( $_COOKIE['kbg_admin'] == '1' or $_COOKIE['kbg_rank'] == '14' or $_COOKIE['kbg_rank'] == '34' or $_COOKIE['kbg_rank'] == '26' ) {
+if ( $_COOKIE['kbg_admin'] == true or $_COOKIE['kbg_rank'] == '14' or $_COOKIE['kbg_rank'] == '34' or $_COOKIE['kbg_rank'] == '26' ) {
 	echo '[<a href="control.php">Control Panel</a>]'; 
 }
 if ( $_COOKIE['kbg_auth'] == true) {
@@ -93,6 +93,19 @@ if ($_COOKIE['kbg_debug'] == true) {
 	var_dump($pageTitle);
 	echo "</p><p>Version: ";
 	var_dump($version);
+	if ($_COOKIE['kbg_auth'] == true && $_COOKIE['kbg_admin'] = '1') {
+		echo '<br><br>';
+		echo 'Starting Administrative debug information';
+		echo '</p><p>Administrator: ';
+		var_dump($_COOKIE['kbg_admin']);
+		echo '</p><p>Username: ';
+		var_dump($_COOKIE['kbg_uname']);
+		echo '</p><p>Master Record Misc. Data: ';
+		var_dump($masterRecord);
+		echo '</p><p>Master Record Explosion Data: ';
+		var_dump($masterData);
+		echo '</p>';
+	}
 } //TODO : Add special administrative debug
 echo "</body>";
 echo "</html>";

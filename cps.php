@@ -35,11 +35,19 @@ $refcheck3 = $refcheck--;
 //$userData->launchC4("ALL");
 if ( $template == 1 ) { 
 	setcookie('kbg_template','default.css', time()+60*60*24*365); //Sets a template cookie for default.css with a time i forgot
-	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; //Uses a metarefresh to redirect to (supposed to be) control.php
+	if ($refcheck[$refcheck3] == 'cps.php') {
+		echo '<meta http-equiv="refresh" content="0;URL=index.php">'; //this often pisses me off, if the referrer link is this page, redirect it to index
+	} else {
+		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';//if not, redirect to referrer
+	}
 }
 if ( $template == 2 ) {
 	setcookie('kbg_template','midnight.css', time()+60*60*24*365); //same only with midnight.css
-	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">'; 
+	if ($refcheck[$refcheck3] == 'cps.php') {
+		echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+	} else {
+		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+	}
 }
 if ( $action == 1 ) { //TODO : write a function to parse user data then store it in session variables.
 	//setcookie('auth', true, time()+3600); //LOL
@@ -49,7 +57,11 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 	} else {
 		session_start();
 		$_SESSION['kbg_auth'] = true;
-		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+		if ($refcheck[$refcheck3] == 'cps.php') {
+			echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+		} else {
+			echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+		}
 	}
 	echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 }
@@ -95,11 +107,19 @@ if ( $action == 6 ) {
 	setcookie('kbg_debug',true ,time()+60*60*24*30);
 	$_COOKIE['kbg_debug'] = true; //Will be for the dandy debug mode :D
 	echo "<!--- Hidden messages are the shit. Debug mode enabled --->";
-	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+	if ($refcheck[$refcheck3] == 'cps.php') {
+		echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+	} else {
+		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+	}
 }
 if ( $action == 7 ) {
 	setcookie('kbg_debug', false);
-	echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+	if ($refcheck[$refcheck3] == 'cps.php') {
+		echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+	} else {
+		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+	}
 }
 if ( $id == '999' ) {
 	//This is the experimental security logger.

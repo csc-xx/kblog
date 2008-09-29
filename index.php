@@ -106,7 +106,7 @@ if ($_COOKIE['kbg_debug'] == true) {
 		var_dump($masterData);
 		echo '</p>';
 	}
-} //TODO : Add special administrative debug
+}
 echo "</body>";
 echo "</html>";
 ?>

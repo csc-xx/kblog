@@ -34,7 +34,7 @@ $refcheck3 = $refcheck--;
 //$userData = new sVarPipe("EXPLOSION");
 //$userData->launchC4("ALL");
 if ( $template == 1 ) { 
-	setcookie('kbg_template','default.css', time()+60*60*24*365); //Sets a template cookie for default.css with a time i forgot
+	setcookie('kbg_template','default.css', time()+60*60*24*365); //Sets a template cookie for default.css with a years worth of time
 	if ($refcheck[$refcheck3] == 'cps.php') {
 		echo '<meta http-equiv="refresh" content="0;URL=index.php">'; //this often pisses me off, if the referrer link is this page, redirect it to index
 	} else {

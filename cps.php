@@ -56,7 +56,7 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999>';
 	} else {
 		session_start();
-		$_SESSION['kbg_auth'] = true;
+		$_SESSION['kbg_auth'] = true; //TODO : Make it pass the session id, duh!
 		if ($refcheck[$refcheck3] == 'cps.php') {
 			echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 		} else {

@@ -42,7 +42,7 @@ echo "</h2>";
 if ( $_COOKIE['kbg_auth'] == true ) {
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
-if ( $_COOKIE['kbg_admin'] == true or $_COOKIE['kbg_rank'] == '14' or $_COOKIE['kbg_rank'] == '34' or $_COOKIE['kbg_rank'] == '26' ) {
+if ( $_COOKIE['kbg_admin'] == true ) {
 	echo '[<a href="control.php">Control Panel</a>]'; 
 }
 if ( $_COOKIE['kbg_auth'] == true) {

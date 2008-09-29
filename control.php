@@ -27,7 +27,7 @@ echo "<html>";
 echo "<head>"; //nice and neat...not
 echo '<title>' . $pageTitle . ' ' . $version . ""; //FIXME : Doesnt display right
 echo "</title>";
-if ($_COOKIE['kbg_admin'] == '1' or $_COOKIE['kbg_rank'] == '14' or $_COOKIE['kbg_rank'] == '34' or $_COOKIE['kbg_rank'] == '26' ) {
+if ($_COOKIE['kbg_admin'] == '1') {
 } else {
 	echo '<meta http-equiv="refresh" content="0;URL=cps.php?id=999&action=authcheck1">';
 }
@@ -39,7 +39,7 @@ if (!$_COOKIE['kbg_template']) {
 echo "</head>";
 echo "<body>";
 echo '[<a href="index.php">Home</a>]';
-//if ( $_COOKIE['kbg_admin'] == '1' or $_COOKIE['kbg_rank'] == '14' or $_COOKIE['kbg_rank'] == '34' or $_COOKIE['kbg_rank'] == '26' ) {
+//if ( $_COOKIE['kbg_admin'] == '1' ) {
 	echo '<p>';
 	echo '<form name="jump">';
 	echo '<select name="menu" onChange="location=document.jump.menu.options[document.jump.menu.selectedIndex].value;" value="Templates">';

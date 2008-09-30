@@ -104,8 +104,7 @@ if ( $action == 5 ) {
 	echo '<meta http-equiv="refresh" content="5;URL=control.php">';
 }
 if ( $action == 6 ) {
-	setcookie('kbg_debug',true ,time()+60*60*24*30);
-	$_COOKIE['kbg_debug'] = true; //Will be for the dandy debug mode :D
+	setcookie('kbg_debug',true ,time()+60*60*24*30); //Will be for the dandy debug mode :D
 	echo "<!--- Hidden messages are the shit. Debug mode enabled --->";
 	if ($refcheck[$refcheck3] == 'cps.php') {
 		echo '<meta http-equiv="refresh" content="0;URL=index.php">';

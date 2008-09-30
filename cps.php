@@ -55,12 +55,12 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 		echo '<font color="00ff00"> FAIL </font>';
 		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999>';
 	} else {
-		session_start();
-		$_SESSION['kbg_auth'] = true; //TODO : Make it pass the session id, duh!
+		session_start(); //TODO : Make it randomly regenerate the session ID
+		$_SESSION['kbg_auth'] = true; 
 		if ($refcheck[$refcheck3] == 'cps.php') {
-			echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+			echo '<meta http-equiv="refresh" content="0;URL=index.php?'. htmlspecialchars(SID) .'">';
 		} else {
-			echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
+			echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'?'. htmlspecialchars(SID) .'">';
 		}
 	}
 	echo '<meta http-equiv="refresh" content="0;URL=index.php">';

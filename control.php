@@ -29,7 +29,7 @@ echo '<title>' . $pageTitle . ' ' . $version . ""; //FIXME : Doesnt display righ
 echo "</title>";
 if ($_COOKIE['kbg_admin'] == '1') {
 } else {
-	echo '<meta http-equiv="refresh" content="0;URL=cps.php?id=999&action=authcheck1">';
+	echo '<meta http-equiv="refresh" content="0;URL=cps.php?id=999&action=authcheck1">'; 
 }
 if (!$_COOKIE['kbg_template']) { 
 	echo '<link rel="stylesheet" href="default.css">'; 
@@ -45,7 +45,7 @@ echo '[<a href="index.php">Home</a>]';
 	echo '<select name="menu" onChange="location=document.jump.menu.options[document.jump.menu.selectedIndex].value;" value="Templates">';
         echo '<option value="#"> Templates </option>';
         echo '<option value="#"> - </option>';
-        echo '<option value="cps.php?st=1"> Default </option>';
+        echo '<option value="cps.php?st=1"> Default </option>'; //TODO : Session checking...*sigh*
         echo '<option value="cps.php?st=2"> Midnight </option>';
 	echo '</select>';
 	echo '</form>';

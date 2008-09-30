@@ -35,7 +35,7 @@ $refcheck3 = $refcheck--;
 //$userData->launchC4("ALL");
 if ( $template == 1 ) { 
 	setcookie('kbg_template','default.css', time()+60*60*24*365); //Sets a template cookie for default.css with a years worth of time
-	if ($refcheck[$refcheck3] == 'cps.php') {
+	if ($refcheck[$refcheck3] == 'cps.php') { //TODO : Check if a session ID was passed, if so, repass it 
 		echo '<meta http-equiv="refresh" content="0;URL=index.php">'; //this often pisses me off, if the referrer link is this page, redirect it to index
 	} else {
 		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';//if not, redirect to referrer
@@ -43,16 +43,16 @@ if ( $template == 1 ) {
 }
 if ( $template == 2 ) {
 	setcookie('kbg_template','midnight.css', time()+60*60*24*365); //same only with midnight.css
-	if ($refcheck[$refcheck3] == 'cps.php') {
-		echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+	if ($refcheck[$refcheck3] == 'cps.php') { //TODO : Same as line 38
+		echo '<meta http-equiv="refresh" content="0;URL=index.php">'; 
 	} else {
 		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
 	}
 }
 if ( $action == 1 ) { //TODO : write a function to parse user data then store it in session variables.
-	//setcookie('auth', true, time()+3600); //LOL
+	//setcookie('auth', true, time()+3600); //LOL (Kept for historical luls)
 	if(!$refcheck[$refcheck3] == 'login.php') {
-		echo '<font color="00ff00"> FAIL </font>';
+		echo '<font color="00ff00"> FAIL </font>'; //TODO : terminate session variables and data, regenerate it then dismiss perhaps?
 		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999>';
 	} else {
 		session_start(); //TODO : Make it randomly regenerate the session ID
@@ -67,7 +67,7 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 }
 if ( $action == 2 ) { //TODO : Rewrite
 	//Old: logout.php   Purpose: Resets the cookies nessisary for a successful login.
-	setcookie('auth', false);
+	setcookie('auth', false); //TODO : have a session regeneration and dump the variables, then close the session ;)
 	setcookie('uname', false);
 	echo '<meta http-equiv="refresh" content="0;URL=blog.php">';
 }
@@ -101,20 +101,20 @@ if ( $action == 5 ) {
 	echo 'Done!<br>';
 	echo 'CPS Script version reads ' . $version;
 	echo '<br>Redirecting in 5.';
-	echo '<meta http-equiv="refresh" content="5;URL=control.php">';
+	echo '<meta http-equiv="refresh" content="5;URL=control.php">'; //TODO : sigh, session id
 }
 if ( $action == 6 ) {
 	setcookie('kbg_debug',true ,time()+60*60*24*30); //Will be for the dandy debug mode :D
 	echo "<!--- Hidden messages are the shit. Debug mode enabled --->";
-	if ($refcheck[$refcheck3] == 'cps.php') {
-		echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+	if ($refcheck[$refcheck3] == 'cps.php') { //TODO : See line 38
+		echo '<meta http-equiv="refresh" content="0;URL=index.php">'; 
 	} else {
 		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';
 	}
 }
 if ( $action == 7 ) {
 	setcookie('kbg_debug', false);
-	if ($refcheck[$refcheck3] == 'cps.php') {
+	if ($refcheck[$refcheck3] == 'cps.php') { //TODO : See line 38
 		echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 	} else {
 		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'">';

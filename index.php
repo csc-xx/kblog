@@ -43,10 +43,10 @@ if ( $_COOKIE['kbg_auth'] == true ) {
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
 if ( $_COOKIE['kbg_admin'] == true ) {
-	echo '[<a href="control.php">Control Panel</a>]'; 
+	echo '[<a href="control.php">Control Panel</a>]'; //TODO : Session id checking
 }
 if ( $_COOKIE['kbg_auth'] == true) {
-	echo '[<a href="cps.php?action=2">Logout</a>]'; 
+	echo '[<a href="cps.php?action=2">Logout</a>]'; //TODO : validate action numbers
 }
 if ( $_COOKIE['kbg_auth'] == false ) {
 	echo '<form action="login.php" method="post">';
@@ -64,7 +64,7 @@ if ( $_COOKIE['kbg_auth'] == false ) {
 	echo 'You need to login to post blogs!';
 }
 if ( $_COOKIE['kbg_auth'] == true ) {  
-	echo '[<a href="blogit.php">Post a new blog!</a>]';
+	echo '[<a href="blogit.php">Post a new blog!</a>]'; //TODO : check for session
 }
 $masterRecord = fopen('master', 'rb');
 $masterData = explode("\n", $masterRecord);
@@ -105,7 +105,7 @@ if ($_COOKIE['kbg_debug'] == true) {
 		echo '</p><p>Master Record Explosion Data: ';
 		var_dump($masterData);
 		echo '</p>';
-	}
+	}//TODO : Administrative session dumping data
 }
 echo "</body>";
 echo "</html>";

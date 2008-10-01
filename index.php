@@ -104,8 +104,9 @@ if ($_COOKIE['kbg_debug'] == true) {
 		var_dump($masterRecord);
 		echo '</p><p>Master Record Explosion Data: ';
 		var_dump($masterData);
-		echo '</p>';
-	}//TODO : Administrative session dumping data
+		echo '</p><p>Session Data: ';
+		var_dump($_SESSION);
+	}//FIXME : Probably Broken ^-
 }
 echo "</body>";
 echo "</html>";

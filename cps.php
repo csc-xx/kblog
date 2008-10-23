@@ -55,7 +55,7 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 		echo '<font color="00ff00"> FAIL </font>'; //TODO : terminate session variables and data, regenerate it then dismiss perhaps?
 		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999>';
 	} else {
-		session_start(); //TODO : Make it randomly regenerate the session ID
+		session_start(); //TODO : //Make it randomly regenerate the session ID\\ Set random traps and cookies to regenerate the id
 		$_SESSION['kbg_auth'] = true; 
 		if ($refcheck[$refcheck3] == 'cps.php') {
 			echo '<meta http-equiv="refresh" content="0;URL=index.php?'. htmlspecialchars(SID) .'">';
@@ -65,10 +65,14 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 	}
 	echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 }
-if ( $action == 2 ) { //TODO : Rewrite
-	//Old: logout.php   Purpose: Resets the cookies nessisary for a successful login.
-	setcookie('auth', false); //TODO : have a session regeneration and dump the variables, then close the session ;)
-	setcookie('uname', false);
+if ( $action == 2 ) { 
+	//TODO : Test the session code
+	if(!empty($_SESSION)) {
+		if(session_regenerate_id(true) == true) {
+			session_unset();
+			session_write_close();
+		}
+	}
 	echo '<meta http-equiv="refresh" content="0;URL=blog.php">';
 }
 	

@@ -68,10 +68,10 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 if ( $action == 2 ) { 
 	//TODO : Test the session code
 	if(!empty($_SESSION)) {
-		if(session_regenerate_id(true) == true) {
+		if(session_regenerate_id(true) == false) {
 			session_unset();
-			session_write_close();
 		}
+		session_write_close();
 	}
 	echo '<meta http-equiv="refresh" content="0;URL=blog.php">';
 }

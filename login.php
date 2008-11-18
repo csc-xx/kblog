@@ -21,7 +21,7 @@
 setcookie('uname', $_POST['username'], time()+3600); //FIXME : Session!!
 $username = $_POST['username']; //FIXME : Stupidly simple...
 $password = $_POST['password']; //FIXME : ^-
-$ip = $HTTP_SERVER_VARS['REMOTE_ADDR']; //FIXME : Standards...
+$ip = $_SERVER['REMOTE_ADDR']; 
 $usename = $username; //FIXME : ?
 $passok = false; 
 $currfile = fopen('users.data.ps', 'rb');

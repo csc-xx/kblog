@@ -39,16 +39,16 @@ echo "<h2>";
 echo "<center> kBlog ";
 echo "</center>";
 echo "</h2>";
-if ( $_COOKIE['kbg_auth'] == true ) {
+if ( $_COOKIE['kbg_auth'] == true ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
-if ( $_COOKIE['kbg_admin'] == true ) {
+if ( $_COOKIE['kbg_admin'] == true ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo '[<a href="control.php">Control Panel</a>]'; //TODO : Session id checking
 }
-if ( $_COOKIE['kbg_auth'] == true) {
+if ( $_COOKIE['kbg_auth'] == true) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo '[<a href="cps.php?action=2">Logout</a>]'; //TODO : validate action numbers
 }
-if ( $_COOKIE['kbg_auth'] == false ) {
+if ( $_COOKIE['kbg_auth'] == false ) { //FICME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo '<form action="login.php" method="post">';
 	echo '<p> Username:';
 	echo '<input type="text" name="username" size="30">';
@@ -59,11 +59,11 @@ if ( $_COOKIE['kbg_auth'] == false ) {
 	echo '</p>';
 	echo '</form>';
 }
-if ( $_COOKIE['kbg_auth'] == false ) {
+if ( $_COOKIE['kbg_auth'] == false ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo '<p>';
 	echo 'You need to login to post blogs!';
 }
-if ( $_COOKIE['kbg_auth'] == true ) {  
+if ( $_COOKIE['kbg_auth'] == true ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo '[<a href="blogit.php">Post a new blog!</a>]'; //TODO : check for session
 }
 $masterRecord = fopen('master', 'rb');
@@ -82,7 +82,7 @@ if(!$masterRecord['total'] < '1') {
 } else {
 	echo "<blockquote> <center> NO POSTS <center> </blockquote>";
 }
-if ($_COOKIE['kbg_debug'] == true) {
+if ($_COOKIE['kbg_debug'] == true) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo "<hr>";
 	echo "Prettyful debug information mode enabled.";
 	echo "<hr>Template: ";
@@ -93,7 +93,7 @@ if ($_COOKIE['kbg_debug'] == true) {
 	var_dump($pageTitle);
 	echo "</p><p>Version: ";
 	var_dump($version);
-	if ($_COOKIE['kbg_auth'] == true && $_COOKIE['kbg_admin'] = '1') {
+	if ($_COOKIE['kbg_auth'] == true && $_COOKIE['kbg_admin'] = '1') { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 		echo '<br><br>';
 		echo 'Starting Administrative debug information';
 		echo '</p><p>Administrator: ';

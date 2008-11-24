@@ -39,16 +39,17 @@ echo "<h2>";
 echo "<center> kBlog ";
 echo "</center>";
 echo "</h2>";
-if ( $_COOKIE['kbg_auth'] == true ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
+//TODO : Write class to validate all of these, or a subfunction...
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth]' == true ) { 
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
-if ( $_COOKIE['kbg_admin'] == true ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
+if ( $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_admin'] == true ) { 
 	echo '[<a href="control.php">Control Panel</a>]'; //TODO : Session id checking
 }
-if ( $_COOKIE['kbg_auth'] == true) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true ) { 
 	echo '[<a href="cps.php?action=2">Logout</a>]'; //TODO : validate action numbers
 }
-if ( $_COOKIE['kbg_auth'] == false ) { //FICME : Needs to check for the same variable in session data, perhaps i'll write a new class
+if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false ) { 
 	echo '<form action="login.php" method="post">';
 	echo '<p> Username:';
 	echo '<input type="text" name="username" size="30">';

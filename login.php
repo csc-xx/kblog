@@ -18,9 +18,9 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-setcookie('uname', $_POST['username'], time()+3600); //FIXME : Session!!
-$username = $_POST['username']; //FIXME : Stupidly simple...
-$password = $_POST['password']; //FIXME : ^-
+$_SESSION['kbg_uname'] = $_POST['username'];
+$username = $_POST['username']; 
+$password = $_POST['password']; 
 $ip = $_SERVER['REMOTE_ADDR']; 
 $passok = false; 
 $currfile = fopen('users.data.ps', 'rb');

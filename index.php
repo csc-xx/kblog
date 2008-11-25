@@ -61,11 +61,11 @@ if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varChec
 	echo '</p>';
 	echo '</form>';
 }
-if ( $_COOKIE['kbg_auth'] == false ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
+if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo '<p>';
 	echo 'You need to login to post blogs!';
 }
-if ( $_COOKIE['kbg_auth'] == true ) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
 	echo '[<a href="blogit.php">Post a new blog!</a>]'; //TODO : check for session
 }
 $masterRecord = fopen('master', 'rb');

@@ -64,7 +64,7 @@ class sVarCheck {
 	private $variableY;
 	private $type;
 	
-	public function __construct($x, $y) {
+	public function __construct() {
 		$this->X = (string)$x;
 		$this->Y = (string)$y;
 	}

@@ -19,10 +19,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 //Include and initialize variable class
-include("sysvars.php");
+include("sys.php");
 $variables = new sVarPipe();
 $pageTitle = $variables->pageTitle;
 $version = $variables->version;
+$varCheck = new sVarCheck();
 //begin html output
 echo "<html>";
 echo "<head>"; //nice and neat...not
@@ -40,16 +41,16 @@ echo "<center> kBlog ";
 echo "</center>";
 echo "</h2>";
 //TODO : Write class to validate all of these, or a subfunction...
-if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth]' == true ) { 
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth]' == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
-if ( $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_admin'] == true ) { 
+if ( $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_admin'] == true && $varCheck->validateVariable($_COOKIE['kbg_admin'], $_SESSION['kbg_admin']) == true)) { 
 	echo '[<a href="control.php">Control Panel</a>]'; //TODO : Session id checking
 }
-if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true ) { 
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
 	echo '[<a href="cps.php?action=2">Logout</a>]'; //TODO : validate action numbers
 }
-if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false ) { 
+if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
 	echo '<form action="login.php" method="post">';
 	echo '<p> Username:';
 	echo '<input type="text" name="username" size="30">';

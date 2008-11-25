@@ -59,3 +59,21 @@ class sVarPipe {
 		explode("\n", $this->dataPipe);
 	}				
 }
+class sVarCheck {
+	private $variableX;
+	private $variableY;
+	private $type;
+	
+	public function __construct($x, $y) {
+		$this->X = (string)$x;
+		$this->Y = (string)$y;
+	}
+	
+	public function validateVariable($x, $y) {
+		if( !$x == $y ) { //Lol, simple task, simple code
+			return false;
+		} else {
+			return true;
+		}
+	}
+}

@@ -36,6 +36,6 @@ fclose($currfile);
 if($passok) {
  	echo 'Password OK / <meta http-equiv="refresh" content="0;URL=cps.php?action=1">' . $ip;  //FIXME : Will end up broken with the CPS rewrite
   	} else {
- 	echo 'FAIL <meta http-equiv="refresh" content="0;URL=cps.php?action=2">'; //FIXME : where the hell does this go?
+ 	echo '<font color="00ff00"> FAIL </font><meta http-equiv="refresh" content="0;URL=cps.php?action=2">'; //FIXME : where the hell does this go?
 }
 ?>

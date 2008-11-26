@@ -23,6 +23,7 @@ include("sys.php");
 $variables = new sVarPipe();
 $pageTitle = $variables->pageTitle;
 $version = $variables->version;
+//Initialize the new variable checking class
 $varCheck = new sVarCheck();
 //begin html output
 echo "<html>";
@@ -40,7 +41,6 @@ echo "<h2>";
 echo "<center> kBlog ";
 echo "</center>";
 echo "</h2>";
-//TODO : Write class to validate all of these, or a subfunction...
 if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth]' == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
@@ -84,7 +84,7 @@ if(!$masterRecord['total'] < '1') {
 } else {
 	echo "<blockquote> <center> NO POSTS <center> </blockquote>";
 }
-if ($_COOKIE['kbg_debug'] == true) { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
+if ($_COOKIE['kbg_debug'] == true && $_SESSION['kbg_debug'] && $varCheck->validateVariable($_COOKIE['kbg_debug'], $_SESSION['kbg_debug']) == true) { 
 	echo "<hr>";
 	echo "Prettyful debug information mode enabled.";
 	echo "<hr>Template: ";
@@ -95,7 +95,7 @@ if ($_COOKIE['kbg_debug'] == true) { //FIXME : Needs to check for the same varia
 	var_dump($pageTitle);
 	echo "</p><p>Version: ";
 	var_dump($version);
-	if ($_COOKIE['kbg_auth'] == true && $_COOKIE['kbg_admin'] = '1') { //FIXME : Needs to check for the same variable in session data, perhaps i'll write a new class
+	if ($_COOKIE['kbg_auth'] == true && $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_auth'] == true && $_SESSION['kbg_admin'] && $varCheck->validateVariable($_COOKIE['kbg_admin'], $_SESSION['kbg_admin']) == true) && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
 		echo '<br><br>';
 		echo 'Starting Administrative debug information';
 		echo '</p><p>Administrator: ';
@@ -112,6 +112,4 @@ if ($_COOKIE['kbg_debug'] == true) { //FIXME : Needs to check for the same varia
 }
 echo "</body>";
 echo "</html>";
-?>
-		
-	
+?>	

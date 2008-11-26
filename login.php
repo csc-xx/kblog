@@ -25,17 +25,17 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $passok = false; 
 $currfile = fopen('users.data.ps', 'rb');
 while(!feof($currfile)) {
- $currline = explode(':', trim(fgets($currfile, 4096)), 3); //TODO :Evaluate for security reasons
- if($currline[0] == $username) {
-  $salt = substr($currline[1], 0, 12);
-  if(crypt($password, $salt) == $currline[1]) { $passok = true; }
-  break;
- } 
+	$currline = explode(':', trim(fgets($currfile, 4096)), 3); //TODO :Evaluate for security reasons
+ 	if($currline[0] == $username) {
+  		$salt = substr($currline[1], 0, 12);
+  		if(crypt($password, $salt) == $currline[1]) { $passok = true; }
+  	break;
+ 	} 
 }  
 fclose($currfile);
 if($passok) {
- echo 'Password OK / <meta http-equiv="refresh" content="0;URL=cps.php?action=1">' . $ip;  //FIXME : Will end up broken with the CPS rewrite
-  } else {
- echo 'FAIL <meta http-equiv="refresh" content="0;URL=cps.php?action=2">'; //FIXME : where the hell does this go?
+ 	echo 'Password OK / <meta http-equiv="refresh" content="0;URL=cps.php?action=1">' . $ip;  //FIXME : Will end up broken with the CPS rewrite
+  	} else {
+ 	echo 'FAIL <meta http-equiv="refresh" content="0;URL=cps.php?action=2">'; //FIXME : where the hell does this go?
 }
 ?>

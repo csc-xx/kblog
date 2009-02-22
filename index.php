@@ -95,7 +95,7 @@ if ($_COOKIE['kbg_debug'] == true && $_SESSION['kbg_debug'] && $varCheck->valida
 	var_dump($pageTitle);
 	echo "</p><p>Version: ";
 	var_dump($version);
-	if ($_COOKIE['kbg_auth'] == true && $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_auth'] == true && $_SESSION['kbg_admin'] && $varCheck->validateVariable($_COOKIE['kbg_admin'], $_SESSION['kbg_admin']) == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
+	if ($_COOKIE['kbg_auth'] == true && $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_auth'] == true && $_SESSION['kbg_admin'] && $varCheck->validateVariable($_COOKIE['kbg_admin'], $_SESSION['kbg_admin']) == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 		echo '<br><br>';
 		echo 'Starting Administrative debug information';
 		echo '</p><p>Administrator: ';

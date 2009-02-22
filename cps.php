@@ -73,7 +73,7 @@ if ( $action == 2 ) {
 		}
 		session_write_close();
 	}
-	echo '<meta http-equiv="refresh" content="0;URL=blog.php">';
+	echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 }
 	
 // if ( $action == 3 ) { 

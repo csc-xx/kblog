@@ -41,7 +41,7 @@ echo "<h2>";
 echo "<center> kBlog ";
 echo "</center>";
 echo "</h2>";
-if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth]' == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
 if ( $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_admin'] == true && $varCheck->validateVariable($_COOKIE['kbg_admin'], $_SESSION['kbg_admin']) == true)) { 

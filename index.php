@@ -44,13 +44,13 @@ echo "</h2>";
 if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo 'Welcome, ' . $_COOKIE['kbg_uname'] . '! <br>'; 
 } 
-if ( $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_admin'] == true && $varCheck->validateVariable($_COOKIE['kbg_admin'], $_SESSION['kbg_admin']) == true)) { 
+if ( $_COOKIE['kbg_admin'] == true && $_SESSION['kbg_admin'] == true && $varCheck->validateVariable($_COOKIE['kbg_admin'], $_SESSION['kbg_admin']) == true) { 
 	echo '[<a href="control.php">Control Panel</a>]'; //TODO : Session id checking
 }
-if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo '[<a href="cps.php?action=2">Logout</a>]'; //TODO : validate action numbers
 }
-if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
+if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo '<form action="login.php" method="post">';
 	echo '<p> Username:';
 	echo '<input type="text" name="username" size="30">';
@@ -61,11 +61,11 @@ if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varChec
 	echo '</p>';
 	echo '</form>';
 }
-if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
+if ( $_COOKIE['kbg_auth'] == false && $_SESSION['kbg_auth'] == false && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo '<p>';
 	echo 'You need to login to post blogs!';
 }
-if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true)) { 
+if ( $_COOKIE['kbg_auth'] == true && $_SESSION['kbg_auth'] == true && $varCheck->validateVariable($_COOKIE['kbg_auth'], $_SESSION['kbg_auth']) == true) { 
 	echo '[<a href="blogit.php">Post a new blog!</a>]'; //TODO : check for session
 }
 $masterRecord = fopen('master', 'rb');

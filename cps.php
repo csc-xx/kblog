@@ -36,7 +36,7 @@ $refcheck3 = $refcheck--;
 if ( $template == 1 ) { 
 	setcookie('kbg_template','default.css', time()+60*60*24*365); //Sets a template cookie for default.css with a years worth of time
 	if ($refcheck[$refcheck3] == 'cps.php') { //TODO : Check if a session ID was passed, if so, repass it 
-		echo echo '<meta http-equiv="refresh" content="0;URL=index.php?'. htmlspecialchars(SID) .'">'; //this often pisses me off, if the referrer link is this page, redirect it to index
+		echo '<meta http-equiv="refresh" content="0;URL=index.php?'. htmlspecialchars(SID) .'">'; //this often pisses me off, if the referrer link is this page, redirect it to index
 	} else {
 		echo '<meta http-equiv="refresh" content="0;URL='.$referrer.'?'. htmlspecialchars(SID) .'">';//if not, redirect to referrer
 	}

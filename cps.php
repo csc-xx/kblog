@@ -53,7 +53,7 @@ if ( $action == 1 ) { //TODO : write a function to parse user data then store it
 	//setcookie('auth', true, time()+3600); //LOL (Kept for historical luls)
 	if(!$refcheck[$refcheck3] == 'login.php') {
 		echo '<font color="00ff00"> FAIL </font>'; //TODO : terminate session variables and data, regenerate it then dismiss perhaps?
-		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999>';
+		echo '<meta http-equiv="refresh" content="2;URL=cps.php?id=999">';
 	} else {
 		session_start(); //TODO : //Make it randomly regenerate the session ID\\ Set random traps and cookies to regenerate the id
 		$_SESSION['kbg_auth'] = true; 
